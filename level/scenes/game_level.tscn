@@ -1,0 +1,47 @@
+[gd_scene load_steps=6 format=3 uid="uid://dxt1egqsdq3ib"]
+
+[ext_resource type="PackedScene" uid="uid://bk05k0gqgo4if" path="res://characters/scenes/main_character.tscn" id="1_u3uwl"]
+[ext_resource type="PackedScene" uid="uid://8vaw47spectl" path="res://gridmaps/scenes/floor_grid_map.tscn" id="2_00y8i"]
+[ext_resource type="PackedScene" uid="uid://bibvteod5qe22" path="res://gridmaps/scenes/walls_grid_map.tscn" id="3_ysabd"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_pusyk"]
+size = Vector2(1000, 1000)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_43n0m"]
+albedo_color = Color(0.117647, 0.117647, 0.117647, 1)
+
+[node name="GameLevel" type="Node3D"]
+
+[node name="Character" parent="." instance=ExtResource("1_u3uwl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.19031, -3.81555)
+
+[node name="Road" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.3, 0)
+mesh = SubResource("PlaneMesh_pusyk")
+surface_material_override/0 = SubResource("StandardMaterial3D_43n0m")
+
+[node name="LevelGridMap" type="Node3D" parent="."]
+
+[node name="FloorGridMap" parent="LevelGridMap" instance=ExtResource("2_00y8i")]
+data = {
+"cells": PackedInt32Array(4, 65534, 1441795, 0, 65534, 1441795, 65532, 65534, 1441795, 65528, 65534, 1441795, 4, 65530, 1441795, 0, 65530, 1441795, 65532, 65530, 1441795, 65528, 65530, 1441795, 65528, 65526, 1441795, 65532, 65526, 1441795, 0, 65526, 1441795, 4, 65526, 1441795)
+}
+
+[node name="Walls" type="Node3D" parent="LevelGridMap"]
+
+[node name="WallsGridMap" parent="LevelGridMap/Walls" instance=ExtResource("3_ysabd")]
+data = {
+"cells": PackedInt32Array(65527, 65534, 1048579, 3, 65534, 655363)
+}
+
+[node name="WallsGridMap2" parent="LevelGridMap/Walls" instance=ExtResource("3_ysabd")]
+data = {
+"cells": PackedInt32Array(65527, 65534, 655363, 65527, 65530, 1048579, 3, 65530, 1441795, 3, 65526, 1441795)
+}
+
+[node name="WallsGridMap3" parent="LevelGridMap/Walls" instance=ExtResource("3_ysabd")]
+
+[node name="WallsGridMap4" parent="LevelGridMap/Walls" instance=ExtResource("3_ysabd")]
+data = {
+"cells": PackedInt32Array(65531, 65534, 655363, 65535, 65534, 655363, 3, 65534, 1441795)
+}

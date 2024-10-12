@@ -1,0 +1,241 @@
+[gd_scene load_steps=2 format=3 uid="uid://bcyh6lhsopc2x"]
+
+[ext_resource type="Script" path="res://interface/scripts/settings_container.gd" id="1_wpkv0"]
+
+[node name="SettingsContainer" type="ColorRect"]
+custom_minimum_size = Vector2(480, 640)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -240.0
+offset_top = -320.0
+offset_right = 240.0
+offset_bottom = 320.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.2, 0.2, 0.4, 0.8)
+script = ExtResource("1_wpkv0")
+
+[node name="Container" type="VBoxContainer" parent="."]
+custom_minimum_size = Vector2(440, 600)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -220.0
+offset_top = -300.0
+offset_right = 220.0
+offset_bottom = 300.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 8
+
+[node name="Settings" type="Label" parent="Container"]
+layout_mode = 2
+text = "Configurações"
+horizontal_alignment = 1
+uppercase = true
+
+[node name="GraphicsDelimiter" type="HBoxContainer" parent="Container"]
+layout_mode = 2
+theme_override_constants/separation = 8
+alignment = 1
+
+[node name="Text" type="Label" parent="Container/GraphicsDelimiter"]
+layout_mode = 2
+text = "Gráficos"
+
+[node name="Right" type="VBoxContainer" parent="Container/GraphicsDelimiter"]
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 1
+
+[node name="RightDelimiter" type="ColorRect" parent="Container/GraphicsDelimiter/Right"]
+custom_minimum_size = Vector2(0, 1)
+layout_mode = 2
+
+[node name="GraphicsContainer" type="VBoxContainer" parent="Container"]
+custom_minimum_size = Vector2(440, 0)
+layout_mode = 2
+
+[node name="Screen_Space_AA" type="HBoxContainer" parent="Container/GraphicsContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Text" type="Label" parent="Container/GraphicsContainer/Screen_Space_AA"]
+custom_minimum_size = Vector2(180, 0)
+layout_mode = 2
+text = "Anti Aliasing"
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Container/GraphicsContainer/Screen_Space_AA"]
+layout_mode = 2
+
+[node name="Options" type="OptionButton" parent="Container/GraphicsContainer/Screen_Space_AA/HBoxContainer" groups=["options_button"]]
+layout_mode = 2
+selected = 0
+item_count = 2
+popup/item_0/text = "Desabilitado"
+popup/item_1/text = "FXAA"
+popup/item_1/id = 1
+
+[node name="MSAA_3D" type="HBoxContainer" parent="Container/GraphicsContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Text" type="Label" parent="Container/GraphicsContainer/MSAA_3D"]
+custom_minimum_size = Vector2(180, 0)
+layout_mode = 2
+text = "MSAA"
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Container/GraphicsContainer/MSAA_3D"]
+layout_mode = 2
+
+[node name="Options" type="OptionButton" parent="Container/GraphicsContainer/MSAA_3D/HBoxContainer" groups=["options_button"]]
+layout_mode = 2
+selected = 0
+item_count = 4
+popup/item_0/text = "Desabilitado"
+popup/item_1/text = "2x"
+popup/item_1/id = 1
+popup/item_2/text = "4x"
+popup/item_2/id = 2
+popup/item_3/text = "8x"
+popup/item_3/id = 3
+
+[node name="USE_TAA" type="HBoxContainer" parent="Container/GraphicsContainer"]
+custom_minimum_size = Vector2(440, 0)
+layout_mode = 2
+alignment = 1
+
+[node name="Text" type="Label" parent="Container/GraphicsContainer/USE_TAA"]
+custom_minimum_size = Vector2(180, 0)
+layout_mode = 2
+text = "TAA
+"
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Container/GraphicsContainer/USE_TAA"]
+custom_minimum_size = Vector2(130, 0)
+layout_mode = 2
+
+[node name="CheckBox" type="CheckBox" parent="Container/GraphicsContainer/USE_TAA/HBoxContainer" groups=["options_button"]]
+layout_mode = 2
+
+[node name="SSR_ENABLED" type="HBoxContainer" parent="Container/GraphicsContainer"]
+custom_minimum_size = Vector2(440, 0)
+layout_mode = 2
+alignment = 1
+
+[node name="Text" type="Label" parent="Container/GraphicsContainer/SSR_ENABLED"]
+custom_minimum_size = Vector2(180, 0)
+layout_mode = 2
+text = "Reflexos
+"
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Container/GraphicsContainer/SSR_ENABLED"]
+custom_minimum_size = Vector2(130, 0)
+layout_mode = 2
+
+[node name="CheckBox" type="CheckBox" parent="Container/GraphicsContainer/SSR_ENABLED/HBoxContainer" groups=["options_button"]]
+layout_mode = 2
+
+[node name="SSAO_ENABLED" type="HBoxContainer" parent="Container/GraphicsContainer"]
+custom_minimum_size = Vector2(440, 0)
+layout_mode = 2
+alignment = 1
+
+[node name="Text" type="Label" parent="Container/GraphicsContainer/SSAO_ENABLED"]
+custom_minimum_size = Vector2(180, 0)
+layout_mode = 2
+text = "Oclusão de Ambiente
+"
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Container/GraphicsContainer/SSAO_ENABLED"]
+custom_minimum_size = Vector2(130, 0)
+layout_mode = 2
+
+[node name="CheckBox" type="CheckBox" parent="Container/GraphicsContainer/SSAO_ENABLED/HBoxContainer" groups=["options_button"]]
+layout_mode = 2
+
+[node name="SSIL_ENABLED" type="HBoxContainer" parent="Container/GraphicsContainer"]
+custom_minimum_size = Vector2(440, 0)
+layout_mode = 2
+alignment = 1
+
+[node name="Text" type="Label" parent="Container/GraphicsContainer/SSIL_ENABLED"]
+custom_minimum_size = Vector2(180, 0)
+layout_mode = 2
+text = "Luz Indireta"
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Container/GraphicsContainer/SSIL_ENABLED"]
+custom_minimum_size = Vector2(130, 0)
+layout_mode = 2
+
+[node name="CheckBox" type="CheckBox" parent="Container/GraphicsContainer/SSIL_ENABLED/HBoxContainer" groups=["options_button"]]
+layout_mode = 2
+
+[node name="SDFGI_ENABLED" type="HBoxContainer" parent="Container/GraphicsContainer"]
+custom_minimum_size = Vector2(440, 0)
+layout_mode = 2
+alignment = 1
+
+[node name="Text" type="Label" parent="Container/GraphicsContainer/SDFGI_ENABLED"]
+custom_minimum_size = Vector2(180, 0)
+layout_mode = 2
+text = "Iluminação Global"
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Container/GraphicsContainer/SDFGI_ENABLED"]
+custom_minimum_size = Vector2(130, 0)
+layout_mode = 2
+
+[node name="CheckBox" type="CheckBox" parent="Container/GraphicsContainer/SDFGI_ENABLED/HBoxContainer" groups=["options_button"]]
+layout_mode = 2
+
+[node name="MiscDelimiter" type="HBoxContainer" parent="Container"]
+layout_mode = 2
+theme_override_constants/separation = 8
+alignment = 1
+
+[node name="Left" type="VBoxContainer" parent="Container/MiscDelimiter"]
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 1
+
+[node name="LeftDelimiter" type="ColorRect" parent="Container/MiscDelimiter/Left"]
+custom_minimum_size = Vector2(0, 1)
+layout_mode = 2
+
+[node name="Text" type="Label" parent="Container/MiscDelimiter"]
+layout_mode = 2
+text = "Outros"
+
+[node name="MiscContainer" type="VBoxContainer" parent="Container"]
+custom_minimum_size = Vector2(440, 0)
+layout_mode = 2
+
+[node name="DISPLAY_FPS" type="HBoxContainer" parent="Container/MiscContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Text" type="Label" parent="Container/MiscContainer/DISPLAY_FPS"]
+custom_minimum_size = Vector2(180, 0)
+layout_mode = 2
+text = "Mostrar FPS"
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Container/MiscContainer/DISPLAY_FPS"]
+layout_mode = 2
+
+[node name="CheckBox" type="CheckBox" parent="Container/MiscContainer/DISPLAY_FPS/HBoxContainer" groups=["options_button"]]
+custom_minimum_size = Vector2(130, 0)
+layout_mode = 2

@@ -1,0 +1,19 @@
+[gd_scene load_steps=2 format=3 uid="uid://cmm8f0tybnvhd"]
+
+[ext_resource type="Script" path="res://interface/scripts/fps_container.gd" id="1_o2p2x"]
+
+[node name="FpsContainer" type="ColorRect" node_paths=PackedStringArray("_fps")]
+offset_right = 157.0
+offset_bottom = 40.0
+color = Color(0, 0, 0, 0.313726)
+script = ExtResource("1_o2p2x")
+_fps = NodePath("Label")
+
+[node name="Label" type="Label" parent="."]
+custom_minimum_size = Vector2(150, 37)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "9999 FPS"
+horizontal_alignment = 1
+vertical_alignment = 1

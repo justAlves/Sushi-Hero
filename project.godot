@@ -26,6 +26,12 @@ recipes="*res://level/scripts/recipes.gd"
 window/size/viewport_width=1920
 window/size/viewport_height=1080
 
+[global_group]
+
+options_button=""
+enviroment=""
+table=""
+
 [input]
 
 move_left={

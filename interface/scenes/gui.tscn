@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://b1uk4pvv1t5ao"]
+
+[ext_resource type="PackedScene" uid="uid://bcyh6lhsopc2x" path="res://interface/scenes/settings_container.tscn" id="1_afslc"]
+[ext_resource type="PackedScene" uid="uid://cmm8f0tybnvhd" path="res://interface/scenes/fps_container.tscn" id="2_1xe8x"]
+
+[node name="Gui" type="CanvasLayer"]
+process_mode = 3
+
+[node name="SettingsContainer" parent="." node_paths=PackedStringArray("_fps") instance=ExtResource("1_afslc")]
+visible = false
+_fps = NodePath("../FpsContainer")
+
+[node name="FpsContainer" parent="." instance=ExtResource("2_1xe8x")]
+visible = false
